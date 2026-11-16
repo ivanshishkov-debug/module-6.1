@@ -1,0 +1,71 @@
+OFFERTE - Ontmoet de Oudegracht
+
+Van          : Ivan Shyshkov
+Aan          : Het Utrechts Archief, mevrouw E. Blom
+Datum        : 16 november 2026
+Geldig tot   : 30 november 2026
+
+
+
+Beste mevrouw Blom,
+
+Hierbij onze offerte voor de interactieve webapplicatie bij de
+tentoonstelling 'Ontmoet de Oudegracht'.
+
+WAT WIJ MAKEN
+
+- Een interactieve webapplicatie voor het digibord met de oude
+  filmbeelden van de Oudegracht als basis
+- Bediening met touch, zonder mouseOver
+- Een korte uitleg bij de start en een aantrekkelijke weergave
+  voor bezoekers op afstand
+- Een mini-map die laat zien waar je bent in de film
+- Geluidseffecten (geen muziek)
+- Vormgeving in de huisstijl van Het Utrechts Archief, inclusief
+  logo en een colofon-knop met informatie over het archief, de
+  applicatie en de makers
+- Toegankelijk volgens WCAG 2.1 AA
+- Een gebruiksvriendelijk CMS waarmee medewerkers van het archief
+  teksten, punten en geluiden kunnen beheren zonder technische
+  kennis
+
+PRIJS
+
+Omschrijving                         Uren    Tarief      Bedrag
+----------------------------------------------------------------
+Voorbereiden (debriefing, plan
+van aanpak, technisch ontwerp)         20     EUR 30    EUR  600
+Ontwerp en huisstijl                   16     EUR 30    EUR  480
+Webapplicatie bouwen                   40     EUR 30    EUR 1200
+CMS bouwen                             24     EUR 30    EUR  720
+Toegankelijkheid en geluid             12     EUR 30    EUR  360
+Testen en testrapport                  12     EUR 30    EUR  360
+Presentatie en demonstratievideo        8     EUR 30    EUR  240
+----------------------------------------------------------------
+Totaal excl. btw                      132               EUR 3960
+Btw 21%                                                 EUR  832
+----------------------------------------------------------------
+Totaal incl. btw                                        EUR 4792
+
+
+
+PLANNING
+
+De applicatie en het CMS worden opgeleverd en gepresenteerd op
+maandag 7 december 2026 bij Het Utrechts Archief.
+
+AFSPRAKEN
+
+- Het archief levert de filmbeelden, het bronmateriaal en de
+  huisstijlgegevens aan.
+- Wij leggen eenmaal uit hoe het CMS werkt.
+- Het archief mag de applicatie gebruiken voor de tentoonstelling.
+- Wijzigingen buiten deze offerte worden vooraf besproken en
+  apart geoffreerd.
+
+
+
+Gaat u akkoord met deze offerte? Dan ontvaang ik graag een
+handtekening.
+
+

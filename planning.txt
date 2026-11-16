@@ -1,0 +1,58 @@
+
+             PROJECTPLANNING
+             Ontmoet de Oudegracht
+
+
+WEEK 1 | 9 t/m 13 november
+Voorbereiden
+
+- Kick-off van het project (maandag) en toelichting door
+  Ellen Blom (woensdag)
+- De film bekijken en brainstormen over mogelijke uitwerkingen
+- De debriefing afronden
+- Een Git-repository aanmaken met README.md en de mappen
+  docs en src
+- Een Trello-bord opzetten
+
+WEEK 2 | 16 t/m 20 november
+Ontwerp en basis bouwen
+
+- Het technisch ontwerp schrijven (techniekkeuze, architectuur
+  en opzet van het CMS)
+- Het plan van aanpak en de offerte opstellen
+- De huisstijl van Het Utrechts Archief bestuderen
+  (kleuren, lettertype en logo)
+- Wireframes en ontwerpen maken (startscherm, videobediening,
+  mini-map en colofon)
+- De basis van de webapplicatie bouwen: video afspelen en een
+  responsive layout voor het digibord
+
+WEEK 3 | 23 t/m 27 november
+Bouwen en testen
+
+- De interactie afronden: touchbediening, uitleg-pop-up,
+  colofon-pop-up, mini-map en weergave zonder interactie
+- Een CMS bouwen dat eenvoudig te gebruiken is voor
+  medewerkers zonder technische kennis
+- Geluidseffecten toevoegen
+- De toegankelijkheid controleren volgens WCAG 2.1 AA
+- Testen op een touchscreen en verschillende schermformaten
+- Indien er tijd is: taalkeuze (NL/EN) en een quiz of game
+
+WEEK 4 | 30 november t/m 4 december
+Afronden
+
+- Bugs oplossen
+- Het testrapport schrijven
+- De laatste toegankelijkheidscheck uitvoeren
+- Een demonstratievideo opnemen van de webapplicatie en het CMS
+- Het logboek en de documentatie in de map docs bijwerken
+- De eindpresentatie voorbereiden en oefenen
+
+WEEK 5 | 7 december
+Presenteren
+
+- Maandag 7 december 2026, 10:00-12:00
+  Eindpresentatie in het auditorium van Het Utrechts Archief
+  Hamburgerstraat 28, Utrecht
+- Beoordeling, evaluatie en reflectie

@@ -1,0 +1,111 @@
+
+                    DEBRIEFING
+             Ontmoet de Oudegracht
+
+
+1. ALGEMENE INFORMATIE
+
+Klant             Het Utrechts Archief
+Contactpersoon    Ellen Blom (educator)
+Datum en tijd     Woensdag 11 november 2026, 13:15
+Deelnemers        Ellen Blom, docenten en studenten
+                  web development
+
+2. DOEL VAN HET GESPREK
+
+De opdrachtgever lichtte de opdracht toe: een interactieve
+webapplicatie voor de tentoonstelling ‘Ontmoet de Oudegracht’
+(maart 2027, 900 jaar Oudegracht). Ook werden vragen van de
+studenten beantwoord.
+
+3. VRAAG VAN DE KLANT
+
+Mediavraag
+- Een interactieve webapplicatie met oude filmbeelden van de
+  Oudegracht uit de collectie als basis.
+- Een CMS om de applicatie te beheren.
+
+Specifieke vereisten
+- Geschikt voor touch (geen mouseOver) en responsive, met een
+  digibord als hoofdformaat.
+- Toegankelijk volgens WCAG 2.1 AA.
+- Vormgeving volgens de huisstijl van hetutrechtsarchief.nl en
+  de huisstijlmanual.
+- Een startscherm met korte, wegklikbare uitleg. De applicatie
+  moet ook van een afstand aantrekkelijk zijn zonder interactie.
+- Een logo en een colofon-pop-up met informatie over het archief,
+  de applicatie en de makers.
+- Een eenvoudig CMS dat medewerkers zonder technische kennis
+  kunnen gebruiken.
+
+Wensen
+- Taalkeuze
+- Geluidseffecten (geen muziek)
+- Mini-map
+- Quiz of game
+- Ondersteunende animaties
+- Vrije keuze voor de bediening van de video
+
+Bereik
+Lokaal: bezoekers van de tentoonstelling bij Het Utrechts Archief.
+
+4. HUIDIGE SITUATIE VAN DE KLANT
+
+Het archief beschikt over de filmbeelden en een huisstijlmanual.
+Het bronmateriaal en aanvullende informatie volgen nog.
+
+5. DOELSTELLINGEN VAN DE KLANT
+
+- Bezoekers op een toegankelijke en aantrekkelijke manier laten
+  kennismaken met de geschiedenis van de Oudegracht.
+- Een eindproduct maken dat het archief in de expositie kan
+  gebruiken.
+- Succes wordt bepaald door de jury van het archief bij de
+  eindpresentatie.
+
+6. ACTIEPUNTEN EN VERANTWOORDELIJKHEDEN
+
+Team
+- Teamnaam en teamleden doorgeven.
+- Een Git-repository aanmaken en delen met de docent.
+
+Op te leveren
+- Debriefing
+- Technisch ontwerp
+- Plan van aanpak
+- Offerte
+- Webapplicatie en CMS
+- Logboek
+- Testrapport
+- Demonstratievideo
+
+Het archief
+- Bronmateriaal en informatie aanleveren.
+
+Tijdlijn
+- Week 2 en 3: uitvoeren en testen.
+- Week 4: afronden en de eindpresentatie voorbereiden.
+- Eindpresentatie: maandag 7 december 2026, 10:00-12:00, in het
+  auditorium van Het Utrechts Archief (Hamburgerstraat 28).
+
+7. AFSLUITENDE OPMERKINGEN
+
+- Het CMS wordt niet expliciet gevraagd in de opdrachtomschrijving,
+  maar hoort er wel bij.
+- Het gebruik van AI is toegestaan.
+
+Open vragen
+- Wat is de beschikbaarheid en wat zijn de rechten van de film?
+- Welke talen zijn gewenst?
+- Welke hardware en browser zijn beschikbaar op het digibord?
+- Draait de applicatie online of lokaal?
+- Is er geluid in de ruimte?
+- Wat moet er gebeuren na een periode van inactiviteit?
+- Is er een budget voor de offerte?
+- Wat zijn de beoordelingscriteria van de jury?
+
+8. FOLLOW-UPPLAN
+- De open vragen voorleggen aan Ellen Blom.
+- Keuzes uitwerken in het technisch ontwerp en het plan van
+  aanpak.
+- Volgend contactmoment: eindpresentatie op 7 december 2026.
