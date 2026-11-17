@@ -1,0 +1,250 @@
+TECHNISCH ONTWERP
+Ontmoet de Oudegracht
+
+1. INLEIDING
+
+Doel en context
+Het Utrechts Archief opent in maart 2027 de tentoonstelling
+‘Ontmoet de Oudegracht’, naar aanleiding van het 900-jarig
+bestaan van de Oudegracht. Wij ontwikkelen een interactieve
+webapplicatie met oude filmbeelden van de Oudegracht als basis,
+en een CMS waarmee medewerkers van het archief de applicatie
+kunnen beheren. De applicatie wordt getoond op een touchscreen
+ter grootte van een digibord.
+
+Overzicht van het document
+Dit document beschrijft de systeemeisen, de architectuur, het
+datamodel, de gekozen technologieën, de beveiliging, de
+functionaliteiten, de gebruikersinterface en het testplan.
+
+2. SYSTEEMEISEN
+
+Hardware en software
+- De server ondersteunt PHP 8 en MySQL.
+- Er wordt geen Node.js of andere JavaScript-backendtechnologie
+  gebruikt.
+- De applicatie draait op een touchscreen ter grootte van een
+  digibord.
+
+Browser en apparaten
+- Compatibel met de laatste versies van Chrome, Firefox, Safari
+  en Edge.
+- Werkt op digibord, tablet en smartphone.
+- Maakt geen gebruik van mouseOver; alle interactie werkt met
+  touch.
+- Voldoet aan WCAG 2.1 AA.
+
+3. ARCHITECTUUR EN COMPONENTEN
+
+Architectuurmodel
+De applicatie bestaat uit drie lagen:
+
+Bezoeker (touchscreen)
+→ Frontend (HTML, CSS, JavaScript)
+→ Backend (PHP, JSON API)
+→ Database (MySQL)
+
+Medewerker (CMS)
+→ CMS-pagina’s (PHP)
+→ Backend
+→ Database
+
+De frontend haalt de inhoud (punten, teksten, geluiden) via een
+eenvoudige PHP API op in JSON-formaat. Het CMS schrijft naar
+dezelfde database, zodat wijzigingen direct zichtbaar zijn in
+de applicatie.
+
+Frontend
+- HTML5 met semantische elementen, CSS3 (Flexbox en Grid) en
+  vanilla JavaScript.
+- De filmbeelden worden afgespeeld met het HTML5 video-element.
+- De huisstijl (kleuren, lettertype, logo) wordt overgenomen van
+  hetutrechtsarchief.nl en vastgelegd als CSS-variabelen.
+- Responsive layout met media queries, met het digibord als
+  uitgangspunt.
+
+Backend
+- PHP voor de serverlogica en de API.
+- Mappenstructuur: een map api voor de endpoints, een map cms
+  voor het beheergedeelte en een map includes voor gedeelde code,
+  zoals de databaseverbinding.
+- Communicatie met de database via PDO.
+
+Database
+MySQL met de tabellen gebruikers, punten, teksten, geluiden en
+instellingen (zie het datamodel).
+
+4. DATAMODEL
+
+Beschrijving van tabellen en relaties
+
+gebruikers
+CMS-gebruikers. Velden: id, naam, e-mail, wachtwoord (hash),
+aangemaakt_op.
+
+punten
+Plekken in de film en op de mini-map. Velden: id, titel_key,
+tijd_in_film (seconden), positie_x, positie_y (op de mini-map),
+geluid_id, actief.
+
+teksten
+Alle teksten, ook voor meerdere talen. Velden: id, sleutel, taal,
+inhoud.
+
+geluiden
+Geluidsbestanden. Velden: id, naam, bestandspad,
+alt_beschrijving.
+
+instellingen
+Algemene teksten zoals de startuitleg en het colofon. Velden:
+id, sleutel, waarde.
+
+Relaties
+- Een punt hoort bij nul of één geluid
+  (punten.geluid_id verwijst naar geluiden.id).
+- Een punt gebruikt teksten via een sleutel
+  (punten.titel_key verwijst naar teksten.sleutel), per taal één
+  rij.
+- Gebruikers staan los van de andere tabellen en worden alleen
+  gebruikt voor inloggen in het CMS.
+
+Voor het ERD kun je dit schema tekenen in draw.io of dbdiagram.io
+en als afbeelding toevoegen.
+
+5. TECHNOLOGIEËN EN FRAMEWORKS
+
+Frontend
+- HTML en CSS voor structuur en opmaak.
+- JavaScript voor de videobediening, pop-ups, mini-map, geluid
+  en het ophalen van data via fetch.
+- Geen zwaar framework, zodat de applicatie licht blijft en
+  volledig te controleren is op toegankelijkheid.
+
+Backend
+- PHP 8 voor de API en het CMS.
+- Communicatie met MySQL via PDO met prepared statements.
+
+CMS
+Een zelfgebouwd CMS in PHP, speciaal gemaakt voor deze
+applicatie. Het bevat een eenvoudig dashboard waarmee
+medewerkers zonder technische kennis het volgende kunnen
+beheren:
+- Punten (titel, tijd in de film, plek op de mini-map)
+- Teksten, startuitleg en colofon
+- Geluidseffecten uploaden en koppelen
+- (Optioneel) teksten in meerdere talen
+
+6. BEVEILIGING
+
+Inlogbeveiliging
+- Wachtwoorden worden opgeslagen met password_hash en
+  gecontroleerd met password_verify.
+- Sessiebeheer met veilige sessiecookies en automatisch
+  uitloggen na inactiviteit.
+- Het CMS is alleen toegankelijk na inloggen.
+
+Inputvalidatie
+- Alle invoer wordt aan de serverkant gevalideerd.
+- Uitvoer wordt gefilterd met htmlspecialchars tegen XSS.
+- Formulieren in het CMS gebruiken een CSRF-token.
+- Bij het uploaden van geluiden worden het bestandstype en de
+  grootte gecontroleerd.
+
+Databasebeveiliging
+- Prepared statements tegen SQL-injectie.
+- Een aparte databasegebruiker met alleen de benodigde rechten.
+- Inloggegevens van de database staan buiten de publieke map.
+
+7. FUNCTIONALITEITEN EN LOGICA
+
+Startscherm en uitleg
+Bij het starten verschijnt een korte, wegklikbare uitleg over wat
+de applicatie is en kan. De applicatie is ook van een afstand
+aantrekkelijk zonder interactie: de film speelt rustig af en de
+beelden blijven in beweging.
+
+Videobediening
+De video wordt bediend door te slepen of met pijlknoppen aan de
+zijkanten, met duidelijke knoppen voor afspelen en pauzeren.
+Alle bediening werkt met touch en is ook met het toetsenbord te
+gebruiken.
+
+Mini-map
+Onderin beeld toont een mini-map waar je je in de film bevindt.
+De punten uit de database worden daarop getoond.
+
+Geluid
+Bij bepaalde punten wordt een geluidseffect afgespeeld (geen
+muziek). Geluid kan worden uitgezet.
+
+Colofon
+Een knop opent een pop-up met het logo en informatie over
+Het Utrechts Archief, de applicatie en de makers.
+
+Toegankelijkheid (WCAG 2.1 AA)
+- Voldoende kleurcontrast en schaalbare tekst.
+- Alle functies zijn bruikbaar met toetsenbord en touch, met
+  zichtbare focus.
+- Alt-teksten, ondertiteling of een tekstalternatief voor video
+  en geluid, en ARIA-labels voor knoppen en pop-ups.
+- Animaties zijn ondersteunend en respecteren de instelling voor
+  verminderde beweging.
+
+Responsiviteit
+Met Flexbox, Grid en media queries past de layout zich aan
+verschillende schermformaten en verhoudingen aan, met het
+digibord als uitgangspunt.
+
+Procesflow (contentbeheer)
+Medewerker logt in op het CMS
+→ past een punt of tekst aan
+→ CMS slaat het op in MySQL
+→ frontend haalt de nieuwe data via de API op
+→ bezoeker ziet de wijziging.
+
+8. GEBRUIKERSINTERFACE EN WIREFRAMES
+
+UI-beschrijving
+- Startscherm: film op de achtergrond, pop-up met uitleg en een
+  knop om te beginnen.
+- Hoofdscherm: video in het midden, pijlknoppen aan de zijkanten,
+  besturingsknoppen, mini-map onderin en een colofon-knop met
+  logo.
+- CMS-dashboard: overzicht met menu voor punten, teksten,
+  geluiden en instellingen, met eenvoudige formulieren.
+
+Wireframes
+Voeg wireframes toe van het startscherm, het hoofdscherm, de
+colofon-pop-up, het CMS-dashboard en het formulier voor punten.
+Je kunt ze maken in Figma of Excalidraw.
+
+9. TESTPLAN
+
+Teststrategie
+- Functionele tests: werken video, bediening, pop-ups, mini-map,
+  geluid en CMS zoals bedoeld?
+- Responsiviteitstests: digibord, tablet en smartphone.
+- Touchtests: op een echt touchscreen, zonder mouseOver.
+- Browsertests: Chrome, Firefox, Safari en Edge.
+- Toegankelijkheidstests: WCAG 2.1 AA met toetsenbord,
+  schermlezer en een contrastcheck.
+- Beveiligingstests: SQL-injectie, XSS en toegang tot het CMS
+  zonder inloggen.
+
+Testgevallen
+- Bij het starten verschijnt de uitleg en is die weg te klikken.
+- De video start, pauzeert en is te bedienen door te slepen en
+  met de knoppen.
+- De mini-map toont de juiste plek in de film.
+- Het colofon opent en sluit met touch en met het toetsenbord.
+- Een geluid wordt afgespeeld bij het juiste punt en kan worden
+  uitgezet.
+- Een medewerker kan inloggen, een punt toevoegen en een tekst
+  aanpassen; de wijziging is direct zichtbaar in de applicatie.
+- Zonder inloggen is het CMS niet toegankelijk.
+- Ongeldige of kwaadaardige invoer in een CMS-formulier wordt
+  geweigerd.
+- De applicatie is volledig te bedienen met alleen het
+  toetsenbord.
+- De applicatie werkt zonder fouten op het digibord-formaat en
+  op kleinere schermen.
