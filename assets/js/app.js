@@ -6,7 +6,7 @@ const t = (sleutel) => teksten[sleutel] || '';
 
 async function laad(taal = 'nl') {
   try {
-    const res = await fetch('api/data.php?taal=' + taal);
+ const res = await fetch(myProject.apiUrl + '?taal=' + encodeURIComponent(taal));
     const data = await res.json();
     punten = data.punten.map(p => ({ ...p, tijd: parseFloat(p.tijd_in_film) }));
     teksten = data.teksten;
